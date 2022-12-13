@@ -20,7 +20,10 @@ pipeline{
         stage('Push Image to HUb'){
             steps{
                 script{
-                    bat 'docker login -u kanchankumar1sketch -p vkKC3XLeT$Dcx56 docker.io'
+
+                    withCredentials([string(credentialsId: 'docker-pwd', variable: 'password')]) {
+                            bat "docker login -u kanchankumar1sketch -p ${password} docker.io"
+                        }
                     bat 'docker push kanchankumar1sketch/devops-automation'
                 }
             }
