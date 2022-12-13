@@ -37,6 +37,7 @@
 				<version>${project.parent.version}</version>
 			</plugin>
 		</plugins>
+		<finalName>devops-automation</finalName>
 	</build>
 
 </project>
